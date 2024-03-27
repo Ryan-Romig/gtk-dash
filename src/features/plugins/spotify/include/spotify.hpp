@@ -1,0 +1,3 @@
+namespace Spotify {
+void init();
+}
