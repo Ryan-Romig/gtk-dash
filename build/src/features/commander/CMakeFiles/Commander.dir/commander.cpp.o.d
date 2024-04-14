@@ -1,4 +1,4 @@
-src/features/commander/CMakeFiles/Commander.dir/commander.cpp.o: \
+src/features/commander/CMakeFiles/commander.dir/commander.cpp.o: \
  /mnt/server/projects/gtk-dash/src/features/commander/commander.cpp \
  /usr/include/stdc-predef.h \
  /mnt/server/projects/gtk-dash/src/features/commander/include/commander.hpp \

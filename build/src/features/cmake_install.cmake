@@ -47,6 +47,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/mnt/server/projects/gtk-dash/build/src/features/commander/cmake_install.cmake")
   include("/mnt/server/projects/gtk-dash/build/src/features/config-manager/cmake_install.cmake")
   include("/mnt/server/projects/gtk-dash/build/src/features/plugins/cmake_install.cmake")
+  include("/mnt/server/projects/gtk-dash/build/src/features/launcher/cmake_install.cmake")
 
 endif()
 

@@ -93,6 +93,8 @@ gtk__demo_EXTERNAL_OBJECTS =
 gtk-demo: CMakeFiles/gtk-demo.dir/src/main.cpp.o
 gtk-demo: CMakeFiles/gtk-demo.dir/build.make
 gtk-demo: src/features/commander/libcommander.a
+gtk-demo: src/features/launcher/main/libmain-activity.a
+gtk-demo: src/features/launcher/spotify/libspotify-activity.a
 gtk-demo: CMakeFiles/gtk-demo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/server/projects/gtk-dash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable gtk-demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtk-demo.dir/link.txt --verbose=$(VERBOSE)

@@ -168,6 +168,32 @@ spotify/fast:
 	$(MAKE) $(MAKESILENT) -f src/features/plugins/spotify/CMakeFiles/spotify.dir/build.make src/features/plugins/spotify/CMakeFiles/spotify.dir/build
 .PHONY : spotify/fast
 
+#=============================================================================
+# Target rules for targets named main-activity
+
+# Build rule for target.
+main-activity: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main-activity
+.PHONY : main-activity
+
+# fast build rule for target.
+main-activity/fast:
+	$(MAKE) $(MAKESILENT) -f src/features/launcher/main/CMakeFiles/main-activity.dir/build.make src/features/launcher/main/CMakeFiles/main-activity.dir/build
+.PHONY : main-activity/fast
+
+#=============================================================================
+# Target rules for targets named spotify-activity
+
+# Build rule for target.
+spotify-activity: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spotify-activity
+.PHONY : spotify-activity
+
+# fast build rule for target.
+spotify-activity/fast:
+	$(MAKE) $(MAKESILENT) -f src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/build.make src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/build
+.PHONY : spotify-activity/fast
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -203,7 +229,9 @@ help:
 	@echo "... commander"
 	@echo "... config-manager"
 	@echo "... gtk-demo"
+	@echo "... main-activity"
 	@echo "... spotify"
+	@echo "... spotify-activity"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

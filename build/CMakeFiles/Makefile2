@@ -81,14 +81,17 @@ clean: src/clean
 
 # Recursive "all" directory target.
 src/all: src/features/all
+src/all: src/lib/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
 src/preinstall: src/features/preinstall
+src/preinstall: src/lib/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
 src/clean: src/features/clean
+src/clean: src/lib/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -98,18 +101,21 @@ src/clean: src/features/clean
 src/features/all: src/features/commander/all
 src/features/all: src/features/config-manager/all
 src/features/all: src/features/plugins/all
+src/features/all: src/features/launcher/all
 .PHONY : src/features/all
 
 # Recursive "preinstall" directory target.
 src/features/preinstall: src/features/commander/preinstall
 src/features/preinstall: src/features/config-manager/preinstall
 src/features/preinstall: src/features/plugins/preinstall
+src/features/preinstall: src/features/launcher/preinstall
 .PHONY : src/features/preinstall
 
 # Recursive "clean" directory target.
 src/features/clean: src/features/commander/clean
 src/features/clean: src/features/config-manager/clean
 src/features/clean: src/features/plugins/clean
+src/features/clean: src/features/launcher/clean
 .PHONY : src/features/clean
 
 #=============================================================================
@@ -143,6 +149,54 @@ src/features/config-manager/clean: src/features/config-manager/CMakeFiles/config
 .PHONY : src/features/config-manager/clean
 
 #=============================================================================
+# Directory level rules for directory src/features/launcher
+
+# Recursive "all" directory target.
+src/features/launcher/all: src/features/launcher/main/all
+src/features/launcher/all: src/features/launcher/spotify/all
+.PHONY : src/features/launcher/all
+
+# Recursive "preinstall" directory target.
+src/features/launcher/preinstall: src/features/launcher/main/preinstall
+src/features/launcher/preinstall: src/features/launcher/spotify/preinstall
+.PHONY : src/features/launcher/preinstall
+
+# Recursive "clean" directory target.
+src/features/launcher/clean: src/features/launcher/main/clean
+src/features/launcher/clean: src/features/launcher/spotify/clean
+.PHONY : src/features/launcher/clean
+
+#=============================================================================
+# Directory level rules for directory src/features/launcher/main
+
+# Recursive "all" directory target.
+src/features/launcher/main/all: src/features/launcher/main/CMakeFiles/main-activity.dir/all
+.PHONY : src/features/launcher/main/all
+
+# Recursive "preinstall" directory target.
+src/features/launcher/main/preinstall:
+.PHONY : src/features/launcher/main/preinstall
+
+# Recursive "clean" directory target.
+src/features/launcher/main/clean: src/features/launcher/main/CMakeFiles/main-activity.dir/clean
+.PHONY : src/features/launcher/main/clean
+
+#=============================================================================
+# Directory level rules for directory src/features/launcher/spotify
+
+# Recursive "all" directory target.
+src/features/launcher/spotify/all: src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/all
+.PHONY : src/features/launcher/spotify/all
+
+# Recursive "preinstall" directory target.
+src/features/launcher/spotify/preinstall:
+.PHONY : src/features/launcher/spotify/preinstall
+
+# Recursive "clean" directory target.
+src/features/launcher/spotify/clean: src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/clean
+.PHONY : src/features/launcher/spotify/clean
+
+#=============================================================================
 # Directory level rules for directory src/features/plugins
 
 # Recursive "all" directory target.
@@ -173,10 +227,27 @@ src/features/plugins/spotify/clean: src/features/plugins/spotify/CMakeFiles/spot
 .PHONY : src/features/plugins/spotify/clean
 
 #=============================================================================
+# Directory level rules for directory src/lib
+
+# Recursive "all" directory target.
+src/lib/all:
+.PHONY : src/lib/all
+
+# Recursive "preinstall" directory target.
+src/lib/preinstall:
+.PHONY : src/lib/preinstall
+
+# Recursive "clean" directory target.
+src/lib/clean:
+.PHONY : src/lib/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/gtk-demo.dir
 
 # All Build rule for target.
 CMakeFiles/gtk-demo.dir/all: src/features/commander/CMakeFiles/commander.dir/all
+CMakeFiles/gtk-demo.dir/all: src/features/launcher/main/CMakeFiles/main-activity.dir/all
+CMakeFiles/gtk-demo.dir/all: src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtk-demo.dir/build.make CMakeFiles/gtk-demo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtk-demo.dir/build.make CMakeFiles/gtk-demo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/server/projects/gtk-dash/build/CMakeFiles --progress-num=5,6 "Built target gtk-demo"
@@ -184,7 +255,7 @@ CMakeFiles/gtk-demo.dir/all: src/features/commander/CMakeFiles/commander.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gtk-demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/server/projects/gtk-dash/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/server/projects/gtk-dash/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gtk-demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/server/projects/gtk-dash/build/CMakeFiles 0
 .PHONY : CMakeFiles/gtk-demo.dir/rule
@@ -257,7 +328,7 @@ src/features/config-manager/CMakeFiles/config-manager.dir/clean:
 src/features/plugins/spotify/CMakeFiles/spotify.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/features/plugins/spotify/CMakeFiles/spotify.dir/build.make src/features/plugins/spotify/CMakeFiles/spotify.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/features/plugins/spotify/CMakeFiles/spotify.dir/build.make src/features/plugins/spotify/CMakeFiles/spotify.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/server/projects/gtk-dash/build/CMakeFiles --progress-num=7,8 "Built target spotify"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/server/projects/gtk-dash/build/CMakeFiles --progress-num=9,10 "Built target spotify"
 .PHONY : src/features/plugins/spotify/CMakeFiles/spotify.dir/all
 
 # Build rule for subdir invocation for target.
@@ -275,6 +346,58 @@ spotify: src/features/plugins/spotify/CMakeFiles/spotify.dir/rule
 src/features/plugins/spotify/CMakeFiles/spotify.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/features/plugins/spotify/CMakeFiles/spotify.dir/build.make src/features/plugins/spotify/CMakeFiles/spotify.dir/clean
 .PHONY : src/features/plugins/spotify/CMakeFiles/spotify.dir/clean
+
+#=============================================================================
+# Target rules for target src/features/launcher/main/CMakeFiles/main-activity.dir
+
+# All Build rule for target.
+src/features/launcher/main/CMakeFiles/main-activity.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/features/launcher/main/CMakeFiles/main-activity.dir/build.make src/features/launcher/main/CMakeFiles/main-activity.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/features/launcher/main/CMakeFiles/main-activity.dir/build.make src/features/launcher/main/CMakeFiles/main-activity.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/server/projects/gtk-dash/build/CMakeFiles --progress-num=7,8 "Built target main-activity"
+.PHONY : src/features/launcher/main/CMakeFiles/main-activity.dir/all
+
+# Build rule for subdir invocation for target.
+src/features/launcher/main/CMakeFiles/main-activity.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/server/projects/gtk-dash/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/features/launcher/main/CMakeFiles/main-activity.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/server/projects/gtk-dash/build/CMakeFiles 0
+.PHONY : src/features/launcher/main/CMakeFiles/main-activity.dir/rule
+
+# Convenience name for target.
+main-activity: src/features/launcher/main/CMakeFiles/main-activity.dir/rule
+.PHONY : main-activity
+
+# clean rule for target.
+src/features/launcher/main/CMakeFiles/main-activity.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/features/launcher/main/CMakeFiles/main-activity.dir/build.make src/features/launcher/main/CMakeFiles/main-activity.dir/clean
+.PHONY : src/features/launcher/main/CMakeFiles/main-activity.dir/clean
+
+#=============================================================================
+# Target rules for target src/features/launcher/spotify/CMakeFiles/spotify-activity.dir
+
+# All Build rule for target.
+src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/build.make src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/build.make src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/server/projects/gtk-dash/build/CMakeFiles --progress-num=11,12 "Built target spotify-activity"
+.PHONY : src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/all
+
+# Build rule for subdir invocation for target.
+src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/server/projects/gtk-dash/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/server/projects/gtk-dash/build/CMakeFiles 0
+.PHONY : src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/rule
+
+# Convenience name for target.
+spotify-activity: src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/rule
+.PHONY : spotify-activity
+
+# clean rule for target.
+src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/build.make src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/clean
+.PHONY : src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

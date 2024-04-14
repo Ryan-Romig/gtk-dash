@@ -1,30 +1,34 @@
-#include "features/commander/include/commander.hpp"
-#include <gtk/gtk.h>
+#include "features/activity-manager/include/activity-manager.hpp"
+#include "features/launcher/main/main-activity.hpp"
+#include "features/launcher/spotify/spotify-activity.hpp"
+#include <gtkmm.h>
+#include <iostream>
 
-GtkWidget* window;
-GtkWidget* button;
-GtkBuilder* builder;
-void button_clicked_cb()
-{
-    Commander& commander = Commander::getInstance();
-    commander.execute_command("");
-    // commander.execute_command("echo Hello, World!");
-}
 int main(int argc, char* argv[])
 {
-    gtk_init(&argc, &argv);
-    builder = gtk_builder_new();
-    // this path is relative to the build folder
-    gtk_builder_add_from_file(builder, "../src/layout/main.xml", NULL);
-    window = GTK_WIDGET(gtk_builder_get_object(builder, "window"));
-    g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
-    button = GTK_WIDGET(gtk_builder_get_object(builder, "button"));
+    auto app = Gtk::Application::create(argc, argv, "org.rromig.gdash");
+    // create the main window
+    Gtk::Window window;
+    window.set_title("GDash");
+    window.set_default_size(800, 600);
+    window.set_position(Gtk::WIN_POS_CENTER);
+    window.set_border_width(10);
+    window.set_resizable(true);
 
-    g_signal_connect(button, "clicked", G_CALLBACK(button_clicked_cb), NULL);
+    MainActivity mainActivity;
+    Gtk::Box* box = mainActivity.create();
+    SpotifyActivity spotifyActivity;
+    Gtk::Box* box2 = spotifyActivity.create();
 
-    gtk_widget_show_all(window);
+    ActivityManager& am = ActivityManager::getInstance();
+    am.addScreen("main_activity", *box);
+    am.addScreen("spotify_activity", *box2);
+    am.setDefaultScreen("main_activity");
+    am.addStackToWindow(window);
 
-    gtk_main();
+    
+    window.show_all();
 
-    return 0;
+    // run the application
+    return app->run(window);
 }

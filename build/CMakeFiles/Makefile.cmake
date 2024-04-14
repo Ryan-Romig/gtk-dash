@@ -15,8 +15,12 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/mnt/server/projects/gtk-dash/src/features/CMakeLists.txt"
   "/mnt/server/projects/gtk-dash/src/features/commander/CMakeLists.txt"
   "/mnt/server/projects/gtk-dash/src/features/config-manager/CMakeLists.txt"
+  "/mnt/server/projects/gtk-dash/src/features/launcher/CMakeLists.txt"
+  "/mnt/server/projects/gtk-dash/src/features/launcher/main/CMakeLists.txt"
+  "/mnt/server/projects/gtk-dash/src/features/launcher/spotify/CMakeLists.txt"
   "/mnt/server/projects/gtk-dash/src/features/plugins/CMakeLists.txt"
   "/mnt/server/projects/gtk-dash/src/features/plugins/spotify/CMakeLists.txt"
+  "/mnt/server/projects/gtk-dash/src/lib/CMakeLists.txt"
   "/usr/share/cmake-3.25/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.25/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake"
@@ -54,6 +58,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/features/config-manager/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/features/plugins/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/features/plugins/spotify/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/features/launcher/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/features/launcher/main/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/features/launcher/spotify/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/lib/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -62,4 +70,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/features/commander/CMakeFiles/commander.dir/DependInfo.cmake"
   "src/features/config-manager/CMakeFiles/config-manager.dir/DependInfo.cmake"
   "src/features/plugins/spotify/CMakeFiles/spotify.dir/DependInfo.cmake"
+  "src/features/launcher/main/CMakeFiles/main-activity.dir/DependInfo.cmake"
+  "src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/DependInfo.cmake"
   )

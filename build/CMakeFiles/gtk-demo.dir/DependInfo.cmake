@@ -14,6 +14,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/mnt/server/projects/gtk-dash/build/src/features/commander/CMakeFiles/commander.dir/DependInfo.cmake"
+  "/mnt/server/projects/gtk-dash/build/src/features/launcher/main/CMakeFiles/main-activity.dir/DependInfo.cmake"
+  "/mnt/server/projects/gtk-dash/build/src/features/launcher/spotify/CMakeFiles/spotify-activity.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

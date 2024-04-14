@@ -1,0 +1,1 @@
+add_library(main-activity STATIC main-activity.cpp)
