@@ -1,2 +1,0 @@
-/usr/bin/ar qc libspotify.a CMakeFiles/spotify.dir/spotify.cpp.o
-/usr/bin/ranlib libspotify.a

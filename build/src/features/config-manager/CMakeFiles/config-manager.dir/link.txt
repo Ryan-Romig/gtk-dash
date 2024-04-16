@@ -1,2 +1,0 @@
-/usr/bin/ar qc libconfig-manager.a "CMakeFiles/config-manager.dir/config-manager.cpp.o"
-/usr/bin/ranlib libconfig-manager.a

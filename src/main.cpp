@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
     // create the main window
     Gtk::Window window;
     window.set_title("GDash");
-    window.set_default_size(800, 600);
+    window.set_default_size(1024, 768);
     window.set_position(Gtk::WIN_POS_CENTER);
     window.set_border_width(10);
     window.set_resizable(true);
